@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 4-3-2015                      //
-// File: diagonalmatrix.hpp             section: a                             //
-// Purpose: Contains function implementation for diagonalmatrix class          //
+// Programmer: Joshua Brewer and Dakota Ewigman   Date: 4-3-2015            //
+// File: diagonalmatrix.hpp             section: a                          //
+// Purpose: Contains function implementation for diagonalmatrix class       //
 //////////////////////////////////////////////////////////////////////////////
 
 #include "myvec.h"

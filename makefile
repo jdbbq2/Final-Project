@@ -7,7 +7,7 @@
 ## Instructor :  Clayton Price
 ## Class      :  CS328/CS5201 Spring 2015
 ## Assignment :  2
-## Programmer :  Joshua Brewer
+## Programmer :  Joshua Brewer and Dakota Ewigman
 ## Date       :  3-16-2015
 ## Filename   :  makefile
 ##
@@ -59,4 +59,4 @@ driver.o: driver.cpp \
 					tridiagonalmatrix.hpp\
 					pde_holder.h \
 					pde_solver.h\
-					pde_solver.hpp
+					pde_solver.hpp\

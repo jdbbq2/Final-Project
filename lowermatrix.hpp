@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 4-3-2015                      //
+// Programmer: Joshua Brewer and Dakota Ewigman    Date: 4-3-2015           //
 // File: lowerMatrix.hpp             section: a                             //
 // Purpose: Contains function implementation for lowerMatrix class          //
 //////////////////////////////////////////////////////////////////////////////

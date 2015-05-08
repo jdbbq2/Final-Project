@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 4-3-2015                      //
-// File: symmetricmatrix.hpp             section: a                             //
-// Purpose: Contains function implementation for symmetricmatrix class          //
+// Programmer: Joshua Brewer and Dakota Ewigman    Date: 4-3-2015           //
+// File: symmetricmatrix.hpp             section: a                         //
+// Purpose: Contains function implementation for symmetricmatrix class      //
 //////////////////////////////////////////////////////////////////////////////
 
 template <typename T>

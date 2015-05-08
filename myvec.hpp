@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Programmer: JOSHUA BREWER         date: 4-3-2015                          //
+// Programmer: JOSHUA BREWER and Dakota Ewigman    date: 4-3-2015            //
 // File: myVec.hpp               section: c                                  //
 // Purpose: Contains the function definitions for myVec.h                    //
 ///////////////////////////////////////////////////////////////////////////////
