@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 4-3-2015                      //
+// Programmer: Joshua Brewer and Dakota Ewigman      Date: 4-3-2015         //
 // File: driver.cpp                     section: a                          //
 // Purpose: driver to test myMatrix class and gaussian_solver functor       //
 //////////////////////////////////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 4-3-2015                      //
+// Programmer: Joshua Brewer and Dakota Ewigman  Date: 4-3-2015             //
 // File: myVec.hpp             section: a                                   //
 // Purpose: Contains function prototypes for myVec class                    //
 //////////////////////////////////////////////////////////////////////////////

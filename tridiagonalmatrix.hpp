@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 4-3-2015                      //
-// File: tridiagonalmatrix.hpp             section: a                             //
-// Purpose: Contains function implementation for tridiagonalmatrix class          //
+// Programmer: Joshua Brewer and Dakota Ewigman    Date: 4-3-2015           //
+// File: tridiagonalmatrix.hpp             section: a                       //
+// Purpose: Contains function implementation for tridiagonalmatrix class    //
 //////////////////////////////////////////////////////////////////////////////
 
 template <typename T>

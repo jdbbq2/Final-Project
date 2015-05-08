@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 4-3-2015                      //
+// Programmer: Joshua Brewer and Dakota Ewigman   Date: 4-3-2015            //
 // File: gaussian_solver.h                         section: a               //
 // Purpose: Contains the class gaussian_solver and the prototype for the    //
 //          member function                                                 //

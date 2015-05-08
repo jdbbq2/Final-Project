@@ -7,7 +7,7 @@
 ## Instructor :  Clayton Price
 ## Class      :  CS328/CS5201 Spring 2015
 ## Assignment :  2
-## Programmer :  Joshua Brewer
+## Programmer :  Joshua Brewer and Dakota Ewigman
 ## Date       :  3-16-2015
 ## Filename   :  makefile
 ##
