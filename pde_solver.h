@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 5-8-2015                      //
+// Programmer: Joshua Brewer and Dakota Ewigman           Date: 5-8-2015    //
 // File: pde_solver.h                    section: a                         //
 // Purpose: Contains header for a class that solves a pde                   //
 //////////////////////////////////////////////////////////////////////////////
