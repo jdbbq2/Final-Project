@@ -57,3 +57,6 @@ driver.o: driver.cpp \
 					symmetricmatrix.hpp \
 					tridiagonalmatrix.h \
 					tridiagonalmatrix.hpp\
+					pde_holder.h \
+					pde_solver.h\
+					pde_solver.hpp

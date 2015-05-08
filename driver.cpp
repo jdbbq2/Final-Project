@@ -7,6 +7,7 @@
 #include "myvec.h"
 #include "mymatrix.h"
 #include "gaussian_solver.h"
+#include "pde_solver.h"
 #include <iostream>
 #include <fstream>
 
