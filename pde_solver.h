@@ -29,7 +29,7 @@ template <typename T>
 class pde_solver
 {
   public:
-    void operator() (const myMatrix<T>& inmatrix, const myVec<T>&,
+    void operator() (const myMatrix<T>& inmatrix, const myVec<T>& invector,
                       myMatrix<T>& outmatrix, myVec<T>& outvector, const pde_holder<T>& the_pde);
 };
 
