@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
     denseMatrix<double> outmatrix;
     myVec<double> outvector;
 
-    outmatrix.setsize(4);
+    outmatrix.setsize(9);
     mysolver(outmatrix, outvector, myholder);
 
     gaussian_solver<double> myothersolver;
