@@ -18,9 +18,9 @@
 //Function:void   void operator() (const myMatrix<T>& inmatrix, const myVec<T>&,                //
 //                      myMatrix<T>& outmatrix, myVec<T>& outvector, const pde_holder& the_pde);//
 //                                                                             ///////////////////
-//Precondition:                                                                //
+//Precondition: size of matrix must be a perfect square                        //
 //Postcondition:                                                               //
-//Description:                                                                 //
+//Description: dimentions of passed matrix represents number of points to compute//
 /////////////////////////////////////////////////////////////////////////////////
 
 
@@ -29,8 +29,7 @@ template <typename T>
 class pde_solver
 {
   public:
-    void operator() (const myMatrix<T>& inmatrix, const myVec<T>& invector,
-                      myMatrix<T>& outmatrix, myVec<T>& outvector, const pde_holder<T>& the_pde);
+    void operator() (myMatrix<T>& outmatrix, myVec<T>& outvector, const pde_holder<T>& the_pde);
 };
 
 #include "pde_solver.hpp"

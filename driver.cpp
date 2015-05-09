@@ -72,14 +72,20 @@ int main(int argc, char* argv[])
 
     myholder.lowerbound_x = 0;
     myholder.upperbound_x = PI;
+//    myholder.upperbound_x = 1;
     myholder.lowerbound_y = 0;
     myholder.upperbound_y = PI;
+//    myholder.upperbound_y = 1;
 
     cout << "Creating outmatrix, outvector" << endl;
     symmetricmatrix<double> outmatrix;
     myVec<double> outvector;
 
-    mysolver(symmatrix, b, outmatrix, outvector, myholder);
+    outmatrix.setsize(9);
+    mysolver(outmatrix, outvector, myholder);
+
+    gaussian_solver<double> myothersolver;
+    myothersolver(outmatrix,outvector);
 
     inputfile.close();
 
