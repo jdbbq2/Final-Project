@@ -51,6 +51,8 @@ int main()
     myholder.right_boundary = zero;
     myholder.left_boundary = sin;
 
+    myholder.forcing_funct = zero;
+
     myholder.lowerbound_x = 0;
     myholder.upperbound_x = PI;
     myholder.lowerbound_y = 0;

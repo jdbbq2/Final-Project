@@ -123,8 +123,6 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
       outmatrix(i,((location_x/increment_x) +mult*(temp_location_y/increment_y))-addr) = weight;
     }
 
-    //THIS IS WHERE THE FORCING FUNCTION WILL GO
-
 //    cout << endl << endl << i << endl << endl;
     location_x = location_x + increment_x;
     if ((int)location_x == (int)the_pde.upperbound_x)
@@ -139,6 +137,8 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
   for (int i=0; i < dimentions; i++)
   {
     outvector[i] /= 4;
+    outvector[i] += ((increment_x*increment_x)/4)*the_pde.forcing_funct(increment_x);
+    //forcing funct
   }
   cout << "Post pde_solver vector: " << outvector << endl;
 	return;

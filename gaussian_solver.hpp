@@ -91,7 +91,7 @@ void gaussian_solver<V>::operator() (const denseMatrix<V> matrix, const myVec<V>
   cout <<"post gaussian_solver vector: " << x << endl << endl;
   cout <<"post gaussian_solver matrix: " << endl << a << endl << endl;
   cout <<"SOLUTION: " << endl;
-  for (int i=dimentions-1; i >= 0; i--)
+  for (int i=0; i < dimentions; i++)
   {
     if (x[i] == 0) // free coeff
     {
@@ -100,6 +100,7 @@ void gaussian_solver<V>::operator() (const denseMatrix<V> matrix, const myVec<V>
     } else
     {
       cout << "X_" << i << " = " << x[i];
+
       for (int k=0; k < dimentions; k++)
       {
         if (free_coeff[k] == 1)
