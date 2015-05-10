@@ -8,14 +8,6 @@ template <typename V>
 void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, const pde_holder<V>& the_pde)
 {
 
-  /*-------------VERIFYING PASSED PARAMETERS---------------*/
-  cout << "GOT HERE" << endl;
-  cout << "Don't forget to set matrix sizes" << endl;
-  cout << "lower_boundary (cos(pi)): " << the_pde.lower_boundary(3.14) << endl;
-  cout << "upper_boundary (cos(pi)): " << the_pde.upper_boundary(3.14) << endl;
-  cout << "left_boundary (cos(pi)): " << the_pde.left_boundary(3.14) << endl;
-  cout << "right_boundary (cos(pi)): " << the_pde.right_boundary(3.14) << endl;
-
   if(the_pde.lower_boundary == 0 ||
      the_pde.upper_boundary == 0 ||
      the_pde.left_boundary == 0  ||
@@ -38,7 +30,7 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
 /*--------------check for corners----------------*/
 
 //NOTE: int comparisons are done to avoid round off problems
-//      for example, 1x10^-17 != 0 when it should be
+//      for example, 1x10^-17 not evaluated as equal to 0 when it should be
   if((int)the_pde.lower_boundary(the_pde.lowerbound_x) != (int)the_pde.left_boundary(the_pde.lowerbound_y)  ||
     (int)the_pde.upper_boundary(the_pde.lowerbound_x) != (int)the_pde.left_boundary(the_pde.upperbound_y) ||
     (int)the_pde.upper_boundary(the_pde.upperbound_x) != (int)the_pde.right_boundary(the_pde.upperbound_y) ||
@@ -57,6 +49,7 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
 
   float const weight = -0.25;
 
+  //zero out matrix
   for (int i=0; i < dimentions; i++) //rows
   {
 
@@ -75,50 +68,50 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
   const int mult = sqrt(dimentions);
   const int addr = mult+1;
 
-  cout << "increment_x" << increment_x << endl;
-  cout << "increment_y" << increment_y << endl;
+//  cout << "increment_y" << increment_y << endl;
+//  cout << "increment_x" << increment_x << endl;
 
   for (int i=0; i < dimentions; i++)
   {
     temp_location_x = location_x - increment_x;
-    cout << "Look at: : (" << temp_location_x << "," << location_y << ")" << endl;
+//    cout << "Look at: : (" << temp_location_x << "," << location_y << ")" << endl;
     if (temp_location_x == the_pde.lowerbound_x)
     {
       outvector[i] += the_pde.left_boundary(location_y);
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x) + (location_y/increment_y)-addr) << ")" << endl;
+//      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x) + (location_y/increment_y)-addr) << ")" << endl;
       outmatrix(i,((temp_location_x/increment_x) + mult*(location_y/increment_y))-addr) = weight;
     }
 
     temp_location_x = location_x + increment_x;
-    cout << "Look at: : (" << temp_location_x << "," << location_y << ")" << endl;
+//    cout << "Look at: : (" << temp_location_x << "," << location_y << ")" << endl;
     if ((int)temp_location_x == (int)the_pde.upperbound_x) //int comparison for precision change
     {
       outvector[i] += the_pde.right_boundary(location_y);
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x)  + mult*(location_y/increment_y)-addr) << ")" << endl;
+//      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x)  + mult*(location_y/increment_y)-addr) << ")" << endl;
       outmatrix(i,((temp_location_x/increment_x) + mult*(location_y/increment_y ))-addr) = weight;
     }
 
     temp_location_y = location_y - increment_y;
-    cout << "Look at: : (" << location_x << "," << temp_location_y << ")" << endl;
+//    cout << "Look at: : (" << location_x << "," << temp_location_y << ")" << endl;
     if (temp_location_y == the_pde.lowerbound_y)
     {
       outvector[i] += the_pde.lower_boundary(location_x);
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + mult*(temp_location_y/increment_y)-addr) << ")" << endl;
+//      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + mult*(temp_location_y/increment_y)-addr) << ")" << endl;
       outmatrix(i,((location_x/increment_x) + mult*(temp_location_y/increment_y))-addr) = weight;
     }
 
     temp_location_y = location_y + increment_y;
-    cout << "Look at: : (" << location_x << "," << temp_location_y << ")" << endl;
-    cout << endl << endl;
+//    cout << "Look at: : (" << location_x << "," << temp_location_y << ")" << endl;
+//    cout << endl << endl;
 
     if ((int)temp_location_y == (int)the_pde.upperbound_y)
     {
@@ -126,27 +119,27 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + mult*(temp_location_y/increment_y)-addr) << ")" << endl;
+//      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + mult*(temp_location_y/increment_y)-addr) << ")" << endl;
       outmatrix(i,((location_x/increment_x) +mult*(temp_location_y/increment_y))-addr) = weight;
     }
 
     //THIS IS WHERE THE FORCING FUNCTION WILL GO
 
-    cout << endl << endl << i << endl << endl;
+//    cout << endl << endl << i << endl << endl;
     location_x = location_x + increment_x;
     if ((int)location_x == (int)the_pde.upperbound_x)
     {
-      cout << "TURNED " << endl;
+//      cout << "TURNED " << endl;
       location_x = increment_x;
       location_y = location_y+increment_y;
     }
   }
  
-  cout << "THE MATRIX : " <<endl<< outmatrix << endl;
+  cout << "Post pde_solver matrix: " <<endl<< outmatrix << endl;
   for (int i=0; i < dimentions; i++)
   {
     outvector[i] /= 4;
   }
-  cout << "THE VECTOR : " << outvector << endl;
+  cout << "Post pde_solver vector: " << outvector << endl;
 	return;
 }

@@ -1,9 +1,14 @@
 //////////////////////////////////////////////////////////////////////////////
-// Programmer: Joshua Brewer            Date: 5-8-2015                      //
+// Programmer: Joshua Brewer and Dakota Ewigman           Date: 5-8-2015    //
 // File: pde_holder.h                    section: a                         //
 // Purpose: Contains struct to hold information relating to a pde           //
 //////////////////////////////////////////////////////////////////////////////
 
+
+////////////////////////////////////////////////////////////////
+// Class: pde_solver                                          //
+// Purpose: Description of class goes here                    //
+////////////////////////////////////////////////////////////////
 
 template <typename T>
 struct pde_holder

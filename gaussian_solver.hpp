@@ -88,8 +88,8 @@ void gaussian_solver<V>::operator() (const denseMatrix<V> matrix, const myVec<V>
       b[j] = b[j] - (x[i]*a[j][i]); // 0 x aji b -> 0 x 0 b
     }
   }
-  cout <<"b vector: " << x << endl << endl;
-  cout <<"a matrix: " << endl << a << endl << endl;
+  cout <<"post gaussian_solver vector: " << x << endl << endl;
+  cout <<"post gaussian_solver matrix: " << endl << a << endl << endl;
   cout <<"SOLUTION: " << endl;
   for (int i=dimentions-1; i >= 0; i--)
   {
