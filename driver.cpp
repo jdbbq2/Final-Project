@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
     int dimentions;
 
     cout << endl << endl << "Creating symmetric Matrix class" << endl;
-    symmetricmatrix<double> symmatrix;
+    denseMatrix<double> symmatrix;
 
     cout << "Creating B vector" << endl;
     myVec<double> b;
@@ -78,10 +78,10 @@ int main(int argc, char* argv[])
 //    myholder.upperbound_y = 1;
 
     cout << "Creating outmatrix, outvector" << endl;
-    symmetricmatrix<double> outmatrix;
+    denseMatrix<double> outmatrix;
     myVec<double> outvector;
 
-    outmatrix.setsize(25);
+    outmatrix.setsize(64);
     mysolver(outmatrix, outvector, myholder);
 
     gaussian_solver<double> myothersolver;

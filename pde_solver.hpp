@@ -94,7 +94,7 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
 
     temp_location_x = location_x + increment_x;
     cout << "Look at: : (" << temp_location_x << "," << location_y << ")" << endl;
-    if ((float)temp_location_x == (float)the_pde.upperbound_x) //float comparison for precision change
+    if ((int)temp_location_x == (int)the_pde.upperbound_x) //int comparison for precision change
     {
       outvector[i] += the_pde.right_boundary(location_y);
     }
@@ -120,7 +120,7 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
     cout << "Look at: : (" << location_x << "," << temp_location_y << ")" << endl;
     cout << endl << endl;
 
-    if ((float)temp_location_y == (float)the_pde.upperbound_y)
+    if ((int)temp_location_y == (int)the_pde.upperbound_y)
     {
       outvector[i] += the_pde.upper_boundary(location_x);
     }
@@ -132,9 +132,11 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
 
     //THIS IS WHERE THE FORCING FUNCTION WILL GO
 
+    cout << endl << endl << i << endl << endl;
     location_x = location_x + increment_x;
-    if ((float)location_x == (float)the_pde.upperbound_x)
+    if ((int)location_x == (int)the_pde.upperbound_x)
     {
+      cout << "TURNED " << endl;
       location_x = increment_x;
       location_y = location_y+increment_y;
     }
