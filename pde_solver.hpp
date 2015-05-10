@@ -72,7 +72,8 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
       }
     }
   }
-  const int adder = -2;
+  const int mult = sqrt(dimentions);
+  const int addr = mult+1;
 
   cout << "increment_x" << increment_x << endl;
   cout << "increment_y" << increment_y << endl;
@@ -87,8 +88,8 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x) +(location_y/increment_y) + 2*((location_y/increment_y) +adder)) << ")" << endl;
-      outmatrix(i,((temp_location_x/increment_x) +(location_y/increment_y) + 2*((location_y/increment_y) + adder))) = weight;
+      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x) + (location_y/increment_y)-addr) << ")" << endl;
+      outmatrix(i,((temp_location_x/increment_x) + mult*(location_y/increment_y))-addr) = weight;
     }
 
     temp_location_x = location_x + increment_x;
@@ -99,8 +100,8 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x) + (location_y/increment_y) + 2*((location_y/increment_y) +adder)) << ")" << endl;
-      outmatrix(i,((temp_location_x/increment_x) +(location_y/increment_y) + 2*((location_y/increment_y) + adder))) = weight;
+      cout << "CHANGING (" << i << "," <<((temp_location_x/increment_x)  + mult*(location_y/increment_y)-addr) << ")" << endl;
+      outmatrix(i,((temp_location_x/increment_x) + mult*(location_y/increment_y ))-addr) = weight;
     }
 
     temp_location_y = location_y - increment_y;
@@ -111,8 +112,8 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + (temp_location_y/increment_y) +2*((temp_location_y/increment_y) +adder)) << ")" << endl;
-      outmatrix(i,((location_x/increment_x) +(temp_location_y/increment_y) + 2*((temp_location_y/increment_y) +adder))) = weight;
+      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + mult*(temp_location_y/increment_y)-addr) << ")" << endl;
+      outmatrix(i,((location_x/increment_x) + mult*(temp_location_y/increment_y))-addr) = weight;
     }
 
     temp_location_y = location_y + increment_y;
@@ -125,8 +126,8 @@ void pde_solver<V>::operator() (myMatrix<V>& outmatrix, myVec<V>& outvector, con
     }
     else
     {
-      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + (temp_location_y/increment_y)+(2*((temp_location_y/increment_y) +adder))) << ")" << endl;
-      outmatrix(i,((location_x/increment_x) +(temp_location_y/increment_y)+ 2*((temp_location_y/increment_y) +adder))) = weight;
+      cout << "CHANGING (" << i << "," <<((location_x/increment_x) + mult*(temp_location_y/increment_y)-addr) << ")" << endl;
+      outmatrix(i,((location_x/increment_x) +mult*(temp_location_y/increment_y))-addr) = weight;
     }
 
     //THIS IS WHERE THE FORCING FUNCTION WILL GO
